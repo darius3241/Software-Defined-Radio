@@ -18,20 +18,36 @@ Band Pass Filter - 6-16Mhz, (3rd Order butterworth Filter)
 
 <img width="553" alt="IMG_2660" src="https://user-images.githubusercontent.com/82369669/121580264-65f03e00-c9e1-11eb-8dd8-08c8ac006f2f.png">
 
-Voltage smoother 
+## Voltage smoother 
 
-Voltage converter
+![IMG_0552](https://user-images.githubusercontent.com/82369669/121580777-fcbcfa80-c9e1-11eb-95ea-0c9cf91d4400.png)
 
-Oscillator chip 
 
-Crystal 
+## Voltage converter
 
-Mixer (tayloe)
+![IMG_2141](https://user-images.githubusercontent.com/82369669/121580883-19593280-c9e2-11eb-8b31-d71b53603982.png)
 
-Low passs filter -2nd order multiple feedvack Amplifier and filter 
 
-Multicontroller (Arduino Nano) 
-<img width="477" alt="image" src="https://user-images.githubusercontent.com/82369
+## Oscillator chip 
+
+![IMG_3429](https://user-images.githubusercontent.com/82369669/121580915-21b16d80-c9e2-11eb-95d5-8d76481a7042.png)
+
+
+
+## Mixer (tayloe)
+
+![image](https://user-images.githubusercontent.com/82369669/121581027-4279c300-c9e2-11eb-8c18-aefeb1c0967c.png)
+
+
+## Amplifiers 
+
+![IMG_8803](https://user-images.githubusercontent.com/82369669/121581219-73f28e80-c9e2-11eb-8338-f5c0e73de7f5.png)
+
+
+## Arduino Nano 
+
+![IMG_3501](https://user-images.githubusercontent.com/82369669/121581344-92588a00-c9e2-11eb-8d36-6ace54345ab7.png)
+
 
 
 
