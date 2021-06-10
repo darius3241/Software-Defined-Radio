@@ -1,5 +1,5 @@
 # Software-Defined-Radio
-This project is a quadrature sampling down converter software defined radio reciver for Engineering Electronics II at Walla Walla University
+This project is a quadrature sampling down converter software defined radio reciver for Engineering Electronics II at Walla Walla University. My partners are Caleb Nelson(https://github.com/Dizzerin/Software-Defined-Radio) and Eric Walsh 
 
 ## Design Objectives
 Our professor, [Dr. Rob Frohne](https://github.com/frohro), gave us the following design objectives:
@@ -87,6 +87,13 @@ This a photo of our complete board
 
 ![20210519_111718](https://user-images.githubusercontent.com/82369669/121589406-def49300-c9eb-11eb-818c-ed892d1545dc.jpg)
 
+# Results 
+
+In the end, we had about 1μV of sensitivity and between 10 and 30 dB of image rejection. (Darius’
+radio had about 10dB of rejection while Caleb’s had about 30dB of image rejection). Though our radios
+are working, the have less sensitivity than desired and when we examine the waterfall spectral display
+on Quisk there are some distinct lines. We believe these are from signals on the USB input, so it may be
+worthwhile to investigate isolating this further in future revisions.
 
 ### External tools used:
 
