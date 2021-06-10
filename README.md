@@ -5,7 +5,7 @@ More documentation will be added before the project completion on June 10.
 
 ## Design 
 
-#### Main Components:
+## Main Components:
 Band Pass Filter -6-16Mhz, 3rd Order butterworth Filter
 Voltage smoother 
 Voltage converter
