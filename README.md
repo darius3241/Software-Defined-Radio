@@ -4,7 +4,8 @@ This project is still under development, however the PCB design files are comple
 More documentation will be added before the project completion on June 10.
 
 
-## Design 
+## Design: 
+
 Band Pass Filter -6-16Mhz, 3rd Order butterworth Filter
 Voltage smoother 
 Voltage converter
@@ -18,7 +19,7 @@ Multicontroller (Arduino Nano)
 
 
 
-## External tools used:
+### External tools used:
 
 Multiple Feedback Low-Pass Filter Design Tool
 http://sim.okawa-denshi.jp/en/OPtazyuLowkeisan.htm
