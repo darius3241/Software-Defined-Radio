@@ -81,6 +81,48 @@ Complete LtSpice model
 
 <img width="436" alt="image" src="https://user-images.githubusercontent.com/82369669/121587049-37766100-c9e9-11eb-94d1-2ee6531a2701.png">
 
+# Board build up plan 
+
+
+# Revisions and debugging 
+
+We encountered a number of problems during the debugging phase of our project, however, with
+the help of Dr. Frohne, we were able to work through all of them and get our radios working. This paper
+briefly discusses some of the issues encountered, what we tried, revisions made, final results, and
+recommended further work.
+
+After building our boards we followed the steps we outlined in our board bring up plan. We verified
+ground and power weren’t shorted etc. and connected it up to power and made sure the device didn’t
+draw too much current and nothing was heating up. Next, we tested the band pass filter (BPF). To test
+this, we used a signal generator to sweep a range of incoming frequencies and an oscilloscope to
+measure the output frequency. At first, some of our filters didn’t appear to work to well. After realizing
+the wire we used in the inductors had a varnish on it which needed to be sanded off to make good
+electrical contact we had our BPFs up and running.
+
+We then tried to flash the Arduino with some code to test the crystal and oscillator chip. We initially
+had some issues communicating with the si5351a oscillator chip, but after some time we figured out our
+chips had an I2C address of 0x62 instead of 0x60. After updating that we were able to flash the device
+and communicate with it. We then connected the clock outputs up to the oscilloscope and got nothing.
+So, we then tested the crystal directly and realized it wasn’t producing the expected 25 MHz signal.
+After further debugging we realized this chip was placed incorrectly so we de-soldered it, repositioned
+it, and resoldered it. After much time and debugging we ended up de-soldering both the si5351a and
+the crystal and resoldering them by hand. Eventually we got two 14.1 MHz output signals perfectly in
+quadrature, just as the code specified.
+
+We then moved onto testing the I and Q signals. We discovered that the Q signal output was much
+weaker than the I signal, so we were getting basically no image rejection in the Quisk software. We
+examined the I 0°, I 180°, Q 90°, and Q 270° signals and they seemed reasonable, which left us very
+confused. We later examined the op amp and discovered the Q signal output was saturating at its
+lowest value. We determined that the input voltage to the op amp was below its minimum operating
+voltage since we assumed the USB power was 5V when in fact it was only 4.6V. We then connected the
+5V circuit up to a bench power supply directly to ensure it was 5V. This did not fix the issue however, so
+we swapped out the op amp with a similar one. This improved the Q signal slightly, but not very much,
+something was still wrong. After further investigation it was determined that the DC voltage bias
+created by the voltage divider between R6 and R7 was not centered properly. This was probably due to
+inaccuracies of the components since we used 5% tolerance values. To fix this issue, we ended up
+adding a potentiometer in parallel. After adding this and tuning it, we were able to equalize the I and Q
+outputs much better and prevent them from saturating. This gave us much better image rejection.
+
 # Complete Design 
 
 This a photo of our complete board 
@@ -94,6 +136,15 @@ radio had about 10dB of rejection while Caleb’s had about 30dB of image reject
 are working, the have less sensitivity than desired and when we examine the waterfall spectral display
 on Quisk there are some distinct lines. We believe these are from signals on the USB input, so it may be
 worthwhile to investigate isolating this further in future revisions.
+
+# Recomendations 
+
+Other recommendations for future revisions include using continuous rows of pin headers for test
+points instead of single pin headers to ease soldering, include better ground test points (perhaps two
+pads to solder a wire between which ground clips can be clipped onto), moving plastic components
+further from surface mount chips which may need to be de-soldered, and including jumpers to allow the
+op amps to be powered from an alternate power source separate from the 5V circuit so additional
+power can be provided if desired without damaging other components.
 
 ### External tools used:
 
