@@ -6,10 +6,13 @@ More documentation will be added before the project completion on June 10.
 
 ## Design 
 
-
-
+Here is a basic block diagram of our design:
 
 <img width="468" alt="image" src="https://user-images.githubusercontent.com/82369669/121578643-be264080-c9df-11eb-80bb-a3609d6049d5.png">
+
+## List of components used 
+
+
 
 Band Pass Filter - 6-16Mhz, (3rd Order butterworth Filter)
 
