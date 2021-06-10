@@ -115,42 +115,7 @@ See https://github.com/darius3241/Software-Defined-Radio/wiki/Board-build-up-pla
 
 # Revisions and debugging 
 
-We encountered a number of problems during the debugging phase of our project, however, with
-the help of Dr. Frohne, we were able to work through all of them and get our radios working. This paper
-briefly discusses some of the issues encountered, what we tried, revisions made, final results, and
-recommended further work.
-
-After building our boards we followed the steps we outlined in our board bring up plan. We verified
-ground and power weren’t shorted etc. and connected it up to power and made sure the device didn’t
-draw too much current and nothing was heating up. Next, we tested the band pass filter (BPF). To test
-this, we used a signal generator to sweep a range of incoming frequencies and an oscilloscope to
-measure the output frequency. At first, some of our filters didn’t appear to work to well. After realizing
-the wire we used in the inductors had a varnish on it which needed to be sanded off to make good
-electrical contact we had our BPFs up and running.
-
-We then tried to flash the Arduino with some code to test the crystal and oscillator chip. We initially
-had some issues communicating with the si5351a oscillator chip, but after some time we figured out our
-chips had an I2C address of 0x62 instead of 0x60. After updating that we were able to flash the device
-and communicate with it. We then connected the clock outputs up to the oscilloscope and got nothing.
-So, we then tested the crystal directly and realized it wasn’t producing the expected 25 MHz signal.
-After further debugging we realized this chip was placed incorrectly so we de-soldered it, repositioned
-it, and resoldered it. After much time and debugging we ended up de-soldering both the si5351a and
-the crystal and resoldering them by hand. Eventually we got two 14.1 MHz output signals perfectly in
-quadrature, just as the code specified.
-
-We then moved onto testing the I and Q signals. We discovered that the Q signal output was much
-weaker than the I signal, so we were getting basically no image rejection in the Quisk software. We
-examined the I 0°, I 180°, Q 90°, and Q 270° signals and they seemed reasonable, which left us very
-confused. We later examined the op amp and discovered the Q signal output was saturating at its
-lowest value. We determined that the input voltage to the op amp was below its minimum operating
-voltage since we assumed the USB power was 5V when in fact it was only 4.6V. We then connected the
-5V circuit up to a bench power supply directly to ensure it was 5V. This did not fix the issue however, so
-we swapped out the op amp with a similar one. This improved the Q signal slightly, but not very much,
-something was still wrong. After further investigation it was determined that the DC voltage bias
-created by the voltage divider between R6 and R7 was not centered properly. This was probably due to
-inaccuracies of the components since we used 5% tolerance values. To fix this issue, we ended up
-adding a potentiometer in parallel. After adding this and tuning it, we were able to equalize the I and Q
-outputs much better and prevent them from saturating. This gave us much better image rejection.
+See link to get details on the issues we ran across here: https://github.com/darius3241/Software-Defined-Radio/wiki/Debugging-and-Revisions
 
 # Complete Design 
 
@@ -189,6 +154,8 @@ https://rf-tools.com/lc-filter/
 
 ### Credit 
 
-Caleb Nelson: 
-Dr. Frohne: 
-Konrad McClure: 
+Caleb Nelson: https://github.com/Dizzerin/Software-Defined-Radio
+
+Dr. Frohne: https://github.com/frohro/IQ_SDR/tree/muSDR/Quisk/Arduino
+
+Konrad McClure: https://github.com/KonradMcClure/SDR_Receive
