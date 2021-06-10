@@ -4,7 +4,7 @@ This project is still under development, however the PCB design files are comple
 More documentation will be added before the project completion on June 10.
 
 
-
+## Design 
 Band Pass Filter -6-16Mhz, 3rd Order butterworth Filter
 Voltage smoother 
 Voltage converter
@@ -14,7 +14,7 @@ Mixer (tayloe)
 Low passs filter -2nd order multiple feedvack Amplifier and filter 
 Multicontroller (Arduino Nano) 
 <img width="477" alt="image" src="https://user-images.githubusercontent.com/82369
-## Design 
+
 
 
 
