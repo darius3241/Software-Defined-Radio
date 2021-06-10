@@ -87,9 +87,6 @@ Complete LtSpice model
 
 # Quisk set up 
 
-OpenRadio Quisk Interface
-=========================
-
 This code is used provide an easy-to-use way of controlling the OpenRadio SDR from within Quisk.
 It comes in two parts:
 
