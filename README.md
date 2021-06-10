@@ -16,6 +16,7 @@ Our professor, [Dr. Rob Frohne](https://github.com/frohro), gave us the followin
 ## Overview
 The Software Defined Radio (SDR) receiver connects to an antenna and covers the filtering, mixing, and amplification of the desired signal. It then connects a sound card within a computer and software handles the demodulation of the signal into playable audio. The mixing is handled using an Arduino Nano running code provided to us by our Professor, [Dr. Rob Frohne](https://github.com/frohro), which interfaces with [Quisk](https://james.ahlstrom.name/quisk/), an SDR that controls the receiver through the Arduino. Using Quisk, the radio can be tuned to a certain frequency by adjusting the speed of the local oscillator used in the mixing process. Our budget on this project to keep with the low-cost aspect was about $30 including fabrication of the PCB and the required components. 
 
+Note: Overview section by Konrad McClure: https://github.com/KonradMcClure/SDR_Receive
 # Theory
 
 The basics of the SDR Receiver are shown below in the block diagram, with the blue components being defined by software. An antenna picks up the radio signal and passes it through a bandpass filter. This filter will attenuate any signals outside our desired range of 5 – 10 MHz. This is then passed through a Tayloe Mixer, also known as the Tayloe Quadrature Product Detector. The Tayloe Mixer is a simple and efficient mixer that uses a 1:4 demultiplexer and operational amplifiers to generate the I and Q quadrature signals for demodulation. After the signal has been split into four bandbase signals, they are amplified and combined into the I and Q quadrature signals. Those signals go through a final Low-Pass filter that will attenuate signals above 100KHz in frequency, effectively smoothing the output signal. This signal is then sent via 3.5mm audio cable to the soundcard which demodulates the signal. Quisk can then read the input from the sound card and play it. Quisk also interfaces to the Arduino Nano to set the speed of the local oscillator for tuning into the desired frequency.
@@ -165,6 +166,8 @@ are working, the have less sensitivity than desired and when we examine the wate
 on Quisk there are some distinct lines. We believe these are from signals on the USB input, so it may be
 worthwhile to investigate isolating this further in future revisions.
 
+Credit: Caleb Nelson & Dr. Frohne 
+
 # Recomendations 
 
 Other recommendations for future revisions include using continuous rows of pin headers for test
@@ -174,6 +177,8 @@ further from surface mount chips which may need to be de-soldered, and including
 op amps to be powered from an alternate power source separate from the 5V circuit so additional
 power can be provided if desired without damaging other components.
 
+Credit: Caleb Nelson
+
 ### External tools used:
 
 Multiple Feedback Low-Pass Filter Design Tool
@@ -181,3 +186,9 @@ http://sim.okawa-denshi.jp/en/OPtazyuLowkeisan.htm
 
 Third Order Butterworth Bandpass Filter Design Tool
 https://rf-tools.com/lc-filter/
+
+### Credit 
+
+Caleb Nelson: 
+Dr. Frohne: 
+Konrad McClure: 
