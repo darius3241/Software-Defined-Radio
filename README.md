@@ -3,9 +3,11 @@ This project is a quadrature sampling down converter software defined radio reci
 This project is still under development, however the PCB design files are complete and the board is built and in currently in the testing phase.
 More documentation will be added before the project completion on June 10.
 
-# Design 
+## Design 
 
-## Main Components:
+#### Main Components:
+Band Pass Filter -6-16Mhz, 3rd Order butterworth Filter
+
 Band Pass Filter – 6-16Mhz, 3rd order butterworth Filter
 Voltage smoother
 Voltage converter
