@@ -104,7 +104,7 @@ So, to make this work:
 
 3. Run Quisk! The actual tuned frequency will now be shown, and you can use Quisk to tune around the HF bands.
 
-Our professor Dr. Frohne provided the code for us to use and it can be found here: 
+Our professor Dr. Frohne provided the code for us to use and it can be found here: https://github.com/frohro/IQ_SDR/tree/muSDR/Quisk/Arduino
 
 
 
