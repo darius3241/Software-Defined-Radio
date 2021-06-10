@@ -82,7 +82,8 @@ Complete LtSpice model
 <img width="436" alt="image" src="https://user-images.githubusercontent.com/82369669/121587049-37766100-c9e9-11eb-94d1-2ee6531a2701.png">
 
 # Board build up plan 
-
+ 
+See https://github.com/darius3241/Software-Defined-Radio/wiki/Board-build-up-plan for build up plan 
 
 # Revisions and debugging 
 
