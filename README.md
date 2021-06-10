@@ -16,6 +16,7 @@ Here is a basic block diagram of our design:
 
 Band Pass Filter - 6-16Mhz, (3rd Order butterworth Filter)
 
+<img width="553" alt="IMG_2660" src="https://user-images.githubusercontent.com/82369669/121580264-65f03e00-c9e1-11eb-8dd8-08c8ac006f2f.png">
 
 Voltage smoother 
 
