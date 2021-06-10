@@ -17,14 +17,19 @@ Our professor, [Dr. Rob Frohne](https://github.com/frohro), gave us the followin
 The Software Defined Radio (SDR) receiver connects to an antenna and covers the filtering, mixing, and amplification of the desired signal. It then connects a sound card within a computer and software handles the demodulation of the signal into playable audio. The mixing is handled using an Arduino Nano running code provided to us by our Professor, [Dr. Rob Frohne](https://github.com/frohro), which interfaces with [Quisk](https://james.ahlstrom.name/quisk/), an SDR that controls the receiver through the Arduino. Using Quisk, the radio can be tuned to a certain frequency by adjusting the speed of the local oscillator used in the mixing process. Our budget on this project to keep with the low-cost aspect was about $30 including fabrication of the PCB and the required components. 
 
 # Theory
-![Circuit Block Diagram](/images/Diagrams/SDRReceiverBlockDiagram.png)
-The basics of the SDR Receiver are shown above in the block diagram, with the blue components being defined by software. An antenna picks up the radio signal and passes it through a bandpass filter. This filter will attenuate any signals outside our desired range of 5 – 10 MHz. This is then passed through a Tayloe Mixer, also known as the Tayloe Quadrature Product Detector. The Tayloe Mixer is a simple and efficient mixer that uses a 1:4 demultiplexer and operational amplifiers to generate the I and Q quadrature signals for demodulation. After the signal has been split into four bandbase signals, they are amplified and combined into the I and Q quadrature signals. Those signals go through a final Low-Pass filter that will attenuate signals above 100KHz in frequency, effectively smoothing the output signal. This signal is then sent via 3.5mm audio cable to the soundcard which demodulates the signal. Quisk can then read the input from the sound card and play it. Quisk also interfaces to the Arduino Nano to set the speed of the local oscillator for tuning into the desired frequency.
-(Note: Overview and Theory Section was written by Kondrad McClure: https://github.com/KonradMcClure/SDR_Receiver) 
+
+The basics of the SDR Receiver are shown below in the block diagram, with the blue components being defined by software. An antenna picks up the radio signal and passes it through a bandpass filter. This filter will attenuate any signals outside our desired range of 5 – 10 MHz. This is then passed through a Tayloe Mixer, also known as the Tayloe Quadrature Product Detector. The Tayloe Mixer is a simple and efficient mixer that uses a 1:4 demultiplexer and operational amplifiers to generate the I and Q quadrature signals for demodulation. After the signal has been split into four bandbase signals, they are amplified and combined into the I and Q quadrature signals. Those signals go through a final Low-Pass filter that will attenuate signals above 100KHz in frequency, effectively smoothing the output signal. This signal is then sent via 3.5mm audio cable to the soundcard which demodulates the signal. Quisk can then read the input from the sound card and play it. Quisk also interfaces to the Arduino Nano to set the speed of the local oscillator for tuning into the desired frequency.
+(Note: Overview and Theory Section was written by Konrad McClure: https://github.com/KonradMcClure/SDR_Receiver) 
 ## Design 
 
 Here is a basic block diagram of our design:
 
 <img width="468" alt="image" src="https://user-images.githubusercontent.com/82369669/121578643-be264080-c9df-11eb-80bb-a3609d6049d5.png">
+
+Including Schematic 
+
+![IMG_1417](https://user-images.githubusercontent.com/82369669/121584644-8b337b00-c9e6-11eb-850f-7782e2abbaeb.png)
+
 
 ## List of components used 
 
@@ -33,15 +38,21 @@ Here is a basic block diagram of our design:
 
 ## Voltage smoother 
 
+This was added to smooth out 5V power supply from USB. This will help elimate supply noise . 
+
 ![IMG_0552](https://user-images.githubusercontent.com/82369669/121580777-fcbcfa80-c9e1-11eb-95ea-0c9cf91d4400.png)
 
 
 ## Voltage converter
 
+This device converts the 5v logic of the arduino nano to the 3.3v logic of the Si5351a for both directions. 
+
 ![IMG_2141](https://user-images.githubusercontent.com/82369669/121580883-19593280-c9e2-11eb-8b31-d71b53603982.png)
 
 
-## Oscillator chip 
+## Local Oscillator (Si5351a) 
+
+The local oscillator we used, SI5351-AB-GT clock generator was selected largely due to the fact that Dr. Frohne has used this chip with success. 
 
 ![IMG_3429](https://user-images.githubusercontent.com/82369669/121580915-21b16d80-c9e2-11eb-95d5-8d76481a7042.png)
 
@@ -49,10 +60,13 @@ Here is a basic block diagram of our design:
 
 ## Mixer (tayloe)
 
-![image](https://user-images.githubusercontent.com/82369669/121581027-4279c300-c9e2-11eb-8c18-aefeb1c0967c.png)
+The Tayloe Mixer is a mixer design as seen in [this paper](http://www.norcalqrp.org/files/Tayloe_mixer_x3a.pdf) by Dan Tayloe. We chose it due to its relatively simple and elegant design. It utilizes a [two-channel SN74CBT multiplexer](http://www.ti.com/lit/ds/symlink/sn74cbt3253.pdf?ts=1591655665924) and a pair of [INA821ID single gain resistor instrumentation amplifiers](http://www.ti.com/lit/ds/symlink/ina821.pdf?HQS=TI-null-null-mousermode-df-pf-null-wwe&DCM=yes&ref_url=https%3A%2F%2Fwww.mouser.com%2F&distId=26). To be more specific, Tayloe describes this as a "switching integrator," rather than a mixer, since a mixer normally produces both a sum and difference frequency of the RF and LO signals. 
 
+![IMG_1014](https://user-images.githubusercontent.com/82369669/121586223-44df1b80-c9e8-11eb-97ff-ce0ca510c2ee.png)
 
-## Amplifiers 
+## Amplifiers         
+
+Multiple feedback low pass filter and amplifier was used 
 
 ![IMG_8803](https://user-images.githubusercontent.com/82369669/121581219-73f28e80-c9e2-11eb-8338-f5c0e73de7f5.png)
 
