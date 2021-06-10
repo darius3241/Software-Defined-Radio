@@ -26,12 +26,12 @@ Here is a basic block diagram of our design:
 
 <img width="468" alt="image" src="https://user-images.githubusercontent.com/82369669/121578643-be264080-c9df-11eb-80bb-a3609d6049d5.png">
 
-Including Schematic 
+## Schematic 
 
 ![IMG_1417](https://user-images.githubusercontent.com/82369669/121584644-8b337b00-c9e6-11eb-850f-7782e2abbaeb.png)
 
 
-## List of components used 
+## List of components
 
 
 <img width="553" alt="IMG_2660" src="https://user-images.githubusercontent.com/82369669/121580264-65f03e00-c9e1-11eb-8dd8-08c8ac006f2f.png">
@@ -75,8 +75,17 @@ Multiple feedback low pass filter and amplifier was used
 
 ![IMG_3501](https://user-images.githubusercontent.com/82369669/121581344-92588a00-c9e2-11eb-8d36-6ace54345ab7.png)
 
+# Simulation 
 
+Complete LtSpice model 
 
+<img width="436" alt="image" src="https://user-images.githubusercontent.com/82369669/121587049-37766100-c9e9-11eb-94d1-2ee6531a2701.png">
+
+# Complete Design 
+
+This a photo of our complete board 
+
+![20210519_111718](https://user-images.githubusercontent.com/82369669/121589406-def49300-c9eb-11eb-818c-ed892d1545dc.jpg)
 
 
 ### External tools used:
