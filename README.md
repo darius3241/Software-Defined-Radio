@@ -91,6 +91,8 @@ Complete LtSpice model. We used the simulation to test the transient response to
 
 <img width="992" alt="image" src="https://user-images.githubusercontent.com/82369669/121595561-4235f380-c9f3-11eb-8e2d-aac017399d5d.png">
 
+By Erick Waslh
+
 the i and q voltages do indeed approach zero. 
 
 # Quisk set up 
@@ -114,6 +116,7 @@ So, to make this work:
 
 Our professor Dr. Frohne provided the code for us to use and it can be found here: https://github.com/frohro/IQ_SDR/tree/muSDR/Quisk/Arduino
 
+See https://github.com/greenjacketgirl/SDR_Receiver/wiki/9.-Software for more set up intructions. 
 # Quisk Results 
 
 This image is similar to how our radio behaved 
