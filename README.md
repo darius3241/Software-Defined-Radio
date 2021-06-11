@@ -1,6 +1,7 @@
 # Software-Defined-Radio
-This project is a quadrature sampling down converter software defined radio reciver for Engineering Electronics II at Walla Walla University. My partners are Caleb Nelson(https://github.com/Dizzerin/Software-Defined-Radio) and Eric Walsh 
+This project is a quadrature sampling down converter software defined radio reciver for Engineering Electronics II at Walla Walla University. My partners are Caleb Nelson(https://github.com/Dizzerin/Software-Defined-Radio) and Eric Walsh https://github.com/Eric-Walsh/Software-Defined-Radio-Project
 
+Files for the project can be found above this README.md section 
 ## Design Objectives
 Our professor, [Dr. Rob Frohne](https://github.com/frohro), gave us the following design objectives:
   1. Minimum discernible signal less than 1 uV
@@ -59,7 +60,6 @@ The local oscillator we used, SI5351-AB-GT clock generator was selected largely 
 ![IMG_3429](https://user-images.githubusercontent.com/82369669/121580915-21b16d80-c9e2-11eb-95d5-8d76481a7042.png)
 
 
-
 ## Mixer (Tayloe)
 
 The Tayloe Mixer is a mixer design as seen in [this paper](http://www.norcalqrp.org/files/Tayloe_mixer_x3a.pdf) by Dan Tayloe. We chose it due to its relatively simple and elegant design. It utilizes a [two-channel SN74CBT multiplexer](http://www.ti.com/lit/ds/symlink/sn74cbt3253.pdf?ts=1591655665924) and a pair of [INA821ID single gain resistor instrumentation amplifiers](http://www.ti.com/lit/ds/symlink/ina821.pdf?HQS=TI-null-null-mousermode-df-pf-null-wwe&DCM=yes&ref_url=https%3A%2F%2Fwww.mouser.com%2F&distId=26). To be more specific, Tayloe describes this as a "switching integrator," rather than a mixer, since a mixer normally produces both a sum and difference frequency of the RF and LO signals. 
@@ -77,6 +77,9 @@ Multiple feedback low pass filter and amplifier was used
 
 ![IMG_3501](https://user-images.githubusercontent.com/82369669/121581344-92588a00-c9e2-11eb-8d36-6ace54345ab7.png)
 
+# Caluation of Values 
+
+To calculate the values for our Multiple Feedback Low-Pass Filter and Third Order Butterworth Bandpass Filter we used the design tools found at the bottom in the External Tools section 
 # Simulation 
 
 Complete LtSpice model. We used to the simulation to test the transient response to see if the i and q voltages approah zero. 
@@ -104,7 +107,7 @@ So, to make this work:
 
 1. Compile and program the arduino firmware (openradio_quisk.ino) to your OpenRadio board.
 
-2. Copy the quisk_conf_openradio.py file to ~/quisk_conf.py and edit appropriately.
+2. Copy the quisk_conf_openradio.py file to ~/quisk_conf.py and edit appropriately from our professors github page.
 
 3. Run Quisk! The actual tuned frequency will now be shown, and you can use Quisk to tune around the HF bands.
 
@@ -112,11 +115,13 @@ Our professor Dr. Frohne provided the code for us to use and it can be found her
 
 # Quisk Results 
 
-This image is similar up how our radio behaved 
+This image is similar to how our radio behaved 
 
-https://github.com/greenjacketgirl/SDR_Receiver/raw/master/Photos/Screenshot%202020-06-03%2013.55.31.png![image](https://user-images.githubusercontent.com/82369669/121627535-63ff9c80-ca2c-11eb-9324-09a0df549b4d.png)
+![Screenshot 2020-06-03 13 55 31](https://user-images.githubusercontent.com/82369669/121627973-3a934080-ca2d-11eb-98c8-1c3f1afcc461.png)
 
-We had lines as picture in the photo. It is believed that these lines came from noise from the usb port 
+
+We had these lines as pictured in the photo when we pluged in our radios. It is believed that these lines came from noise from the USB port 
+
 Photo credit: https://github.com/greenjacketgirl/SDR_Receiver/wiki/9.-Software
 
 # Board build up plan 
