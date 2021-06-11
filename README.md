@@ -91,7 +91,7 @@ Complete LtSpice model. We used the simulation to test the transient response to
 
 <img width="992" alt="image" src="https://user-images.githubusercontent.com/82369669/121595561-4235f380-c9f3-11eb-8e2d-aac017399d5d.png">
 
-By Erick Waslh
+By Erick Walsh 
 
 the i and q voltages do indeed approach zero. 
 
