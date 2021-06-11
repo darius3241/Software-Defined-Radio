@@ -20,7 +20,8 @@ Note: Overview section by Konrad McClure: https://github.com/KonradMcClure/SDR_R
 # Theory
 
 The basics of the SDR Receiver are shown below in the block diagram, with the blue components being defined by software. An antenna picks up the radio signal and passes it through a bandpass filter. This filter will attenuate any signals outside our desired range of 5 – 10 MHz. This is then passed through a Tayloe Mixer, also known as the Tayloe Quadrature Product Detector. The Tayloe Mixer is a simple and efficient mixer that uses a 1:4 demultiplexer and operational amplifiers to generate the I and Q quadrature signals for demodulation. After the signal has been split into four bandbase signals, they are amplified and combined into the I and Q quadrature signals. Those signals go through a final Low-Pass filter that will attenuate signals above 100KHz in frequency, effectively smoothing the output signal. This signal is then sent via 3.5mm audio cable to the soundcard which demodulates the signal. Quisk can then read the input from the sound card and play it. Quisk also interfaces to the Arduino Nano to set the speed of the local oscillator for tuning into the desired frequency.
-(Note: Overview and Theory Section was written by Konrad McClure: https://github.com/KonradMcClure/SDR_Receiver) 
+
+Note: Overview and Theory Section was written by Konrad McClure: https://github.com/KonradMcClure/SDR_Receiver
 ## Design 
 
 Here is a basic block diagram of our design:
@@ -59,7 +60,7 @@ The local oscillator we used, SI5351-AB-GT clock generator was selected largely 
 
 
 
-## Mixer (tayloe)
+## Mixer (Tayloe)
 
 The Tayloe Mixer is a mixer design as seen in [this paper](http://www.norcalqrp.org/files/Tayloe_mixer_x3a.pdf) by Dan Tayloe. We chose it due to its relatively simple and elegant design. It utilizes a [two-channel SN74CBT multiplexer](http://www.ti.com/lit/ds/symlink/sn74cbt3253.pdf?ts=1591655665924) and a pair of [INA821ID single gain resistor instrumentation amplifiers](http://www.ti.com/lit/ds/symlink/ina821.pdf?HQS=TI-null-null-mousermode-df-pf-null-wwe&DCM=yes&ref_url=https%3A%2F%2Fwww.mouser.com%2F&distId=26). To be more specific, Tayloe describes this as a "switching integrator," rather than a mixer, since a mixer normally produces both a sum and difference frequency of the RF and LO signals. 
 
@@ -78,13 +79,15 @@ Multiple feedback low pass filter and amplifier was used
 
 # Simulation 
 
-Complete LtSpice model 
+Complete LtSpice model. We used to the simulation to test the transient response to see if the i and q voltages approah zero. 
 
 <img width="436" alt="image" src="https://user-images.githubusercontent.com/82369669/121587049-37766100-c9e9-11eb-94d1-2ee6531a2701.png">
 
 ## Results of simulation 
 
 <img width="992" alt="image" src="https://user-images.githubusercontent.com/82369669/121595561-4235f380-c9f3-11eb-8e2d-aac017399d5d.png">
+
+the i and q voltages do indeed approach zero. 
 
 # Quisk set up 
 
