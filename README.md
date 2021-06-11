@@ -29,13 +29,14 @@ Here is a basic block diagram of our design:
 
 <img width="468" alt="image" src="https://user-images.githubusercontent.com/82369669/121578643-be264080-c9df-11eb-80bb-a3609d6049d5.png">
 
+by Konrad McClure: https://github.com/KonradMcClure/SDR_Receive
 ## Schematic 
 
 ![IMG_1417](https://user-images.githubusercontent.com/82369669/121584644-8b337b00-c9e6-11eb-850f-7782e2abbaeb.png)
 
+by Caleb Nelson: https://github.com/Dizzerin/Software-Defined-Radio
 
 ## List of components
-
 
 <img width="553" alt="IMG_2660" src="https://user-images.githubusercontent.com/82369669/121580264-65f03e00-c9e1-11eb-8dd8-08c8ac006f2f.png">
 
