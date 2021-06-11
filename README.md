@@ -139,6 +139,7 @@ This a photo of our complete board
 
 ![20210519_111718](https://user-images.githubusercontent.com/82369669/121589406-def49300-c9eb-11eb-818c-ed892d1545dc.jpg)
 
+By Caleb Nelson 
 # Results 
 
 In the end, we had about 1μV of sensitivity and between 10 and 30 dB of image rejection. (Darius’
