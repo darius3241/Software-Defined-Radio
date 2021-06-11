@@ -82,7 +82,7 @@ Multiple feedback low pass filter and amplifier was used
 To calculate the values for our Multiple Feedback Low-Pass Filter and Third Order Butterworth Bandpass Filter we used the design tools found at the bottom in the External Tools section 
 # Simulation 
 
-Complete LtSpice model. We used to the simulation to test the transient response to see if the i and q voltages approah zero. 
+Complete LtSpice model. We used the simulation to test the transient response to see if the i and q voltages approah zero. 
 
 <img width="436" alt="image" src="https://user-images.githubusercontent.com/82369669/121587049-37766100-c9e9-11eb-94d1-2ee6531a2701.png">
 
