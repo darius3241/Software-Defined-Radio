@@ -110,7 +110,14 @@ So, to make this work:
 
 Our professor Dr. Frohne provided the code for us to use and it can be found here: https://github.com/frohro/IQ_SDR/tree/muSDR/Quisk/Arduino
 
+# Quisk Results 
 
+This image is similar up how our radio behaved 
+
+https://github.com/greenjacketgirl/SDR_Receiver/raw/master/Photos/Screenshot%202020-06-03%2013.55.31.png![image](https://user-images.githubusercontent.com/82369669/121627535-63ff9c80-ca2c-11eb-9324-09a0df549b4d.png)
+
+We had lines as picture in the photo. It is believed that these lines came from noise from the usb port 
+Photo credit: https://github.com/greenjacketgirl/SDR_Receiver/wiki/9.-Software
 
 # Board build up plan 
  
