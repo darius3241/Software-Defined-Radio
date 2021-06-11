@@ -136,6 +136,7 @@ See https://github.com/darius3241/Software-Defined-Radio/wiki/Board-build-up-pla
 
 See link to get details on the issues we ran across here: https://github.com/darius3241/Software-Defined-Radio/wiki/Debugging-and-Revisions
 
+By Caleb Nelson
 # Complete Design 
 
 This a photo of our complete board 
